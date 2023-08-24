@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+    <title>Запись на тренировку</title>
+    <link rel="stylesheet" href="{% static 'auth_user/css/registration.css' %}">
+{% endblock %}
+{% block body %}
+{% include 'navigation_panel.html' %}
+{% include 'side_panel.html' %}
+{% if one %}
+    <h3> Запись к тренеру {{ trainer }}:</h3>
+  {% else %}
+    <h3> Выберите тренера и запишитесь на персональную тренировку! </h3>
+  {% endif %}
+<form method="post" class="reg">
+  {% csrf_token %}
+
+  <table class="registration-form">
+    {{ form.as_table }}
+    <tr>
+      <td colspan="2">
+        <button type="submit">Записаться</button>
+        {% if flag %}
+        <strong class="r"> Запись уже занята попробуйте другую </strong>
+        {% endif %}
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

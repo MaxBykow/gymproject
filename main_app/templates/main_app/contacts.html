@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Контакты</title>
+{% endblock %}
+{% block body %}
+{% include 'navigation_panel.html' %}
+<!— Основное содержимое страницы —>
+<div class="content">
+    <h1>Добро пожаловать на сайт фитнес клуба!</h1>
+    <p>Здесь вы можете найти информацию о нашем клубе.</p>
+</div>
+<div>
+    <img src="{{ pic.picture.url }}" alt="Наша команда" width="25%">
+</div>
+<div class="content">
+    <h1>Номера телефонов: </h1>
+    <ul>
+        <div class="comment">
+            <p class="sender-name">Рецепшн:</p>
+            <p class="comment-text">89664556177</p>
+        </div>
+        <div class="comment">
+            <p class="sender-name">Администрация:</p>
+            <p class="comment-text">89664534130</p>
+        </div>
+        <div class="comment">
+            <p class="sender-name">Консультация</p>
+            <p class="comment-text">89664334140</p>
+        </div>
+    </ul>
+</div>
+{% include 'side_panel.html' %}
+{% endblock %}

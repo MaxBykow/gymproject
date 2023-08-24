@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'auth_user/css/registration.css' %}">
+{% endblock %}
+{% block body %}
+{% include 'navigation_panel.html' %}
+<form method="post" class="reg">
+  {% csrf_token %}
+  <table class="registration-form">
+    {{ form.as_table }}
+    <tr>
+      <td colspan="2">
+        <button type="submit">Зарегистрироваться</button>
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

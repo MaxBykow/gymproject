@@ -1,0 +1,42 @@
+.reg {
+width: 60%;
+margin: 20px;
+border: 2px solid white;
+}
+
+.error {
+color: red;
+}
+
+.registration-form {
+  border-collapse: collapse;
+  background-color: #696969;
+  color: #fff;
+}
+
+.registration-form td {
+  padding: 10px;
+}
+
+.registration-form td:first-child {
+  text-align: right;
+  font-weight: bold;
+  width: 30%;
+}
+
+button {
+    cursor: pointer;
+    background-color: #bf0d55;
+    color: white;
+    border: 10px solid #bf0d55;
+}
+button:hover,
+button:active {
+    background-color: #320777;
+    border-color: #320777;
+}
+
+.r {
+    color: red;
+    background-color: #696969;
+}

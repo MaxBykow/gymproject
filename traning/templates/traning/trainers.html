@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Наши тренеры</title>
+{% endblock %}
+{% block body %}
+{% include 'navigation_panel.html' %}
+{% include 'side_panel.html' %}
+<div class="flexbox">
+    {% for trainer in trainers %}
+      <div class="trainer_block">
+        <div class="image_container">
+            <img src="{{ trainer.picture.url }}" alt="{{ photo.title }}">
+        </div>
+          <div class="textbox">
+              <h2>{{ trainer.name }}</h2>
+              <p><li>Должность: {{ trainer.get_position_display }}</li></p>
+              <p> {{ trainer.description }}</p>
+              <p><li> Телефон для связи: {{trainer.telephone}}</li></p>
+              <a href="{% url 'trainerreg' i=trainer.id %}">Записаться на тренировку </a>
+          </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}

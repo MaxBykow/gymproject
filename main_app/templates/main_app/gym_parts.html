@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Галерея</title>
+{% endblock %}
+{% block body %}
+{% include 'navigation_panel.html' %}
+{% include 'side_panel.html' %}
+<div class="gallery">
+    {% for photo in pics1 %}
+      <div class="photo">
+        <img src="{{ photo.picture.url }}" alt="{{ photo.title }}">
+        <div class="caption">{{ photo.title }}</div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}

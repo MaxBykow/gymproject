@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Домашняя страница</title>
+{% endblock %}
+{% block body %}
+{% include 'navigation_panel.html' %}
+<!— Основное содержимое страницы —>
+<div class="content">
+    <h1>Добро пожаловать на сайт фитнес клуба!</h1>
+    <p>Здесь вы можете найти информацию о нашем клубе.</p>
+</div>
+<div>
+    <img src="{{ pic.1.picture.url}}" alt="Главный зал" width="25%">
+</div>
+{% if request.user.is_authenticated %}
+<a href="{% url 'add_comment' %}"> Написать комментарий </a>
+{% endif %}
+<div class="content">
+    <h1>Комментарии: </h1>
+    <ul>
+    {% for comment in comments %}
+    <div class="comment">
+            <p class="sender-name">{{ comment.author }}:</p>
+            <p class="comment-date">Время и дата: {{ comment.data }}</p>
+            <p class="comment-text">{{ comment.text }}</p>
+    </div>
+    {% endfor %}
+    </ul>
+</div>
+{% include 'side_panel.html' %}
+{% endblock %}

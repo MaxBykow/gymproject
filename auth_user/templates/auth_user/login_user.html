@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+    <title>Войти</title>
+    <link rel="stylesheet" href="{% static 'auth_user/css/registration.css' %}">
+{% endblock %}
+{% block body %}
+{% include 'navigation_panel.html' %}
+<form method="post" class="reg">
+  {% csrf_token %}
+    <h1> Введите свои данные чтобы войти </h1>
+    {{ form.non_field_errors }}
+    {% for f in form %}
+    {{ f.label }}
+    {{ f }}
+    <p class="error">{{ f.error }}</p>
+    {% endfor %}
+    <button type="submit"> Войти </button>
+</form>
+{% endblock %}
