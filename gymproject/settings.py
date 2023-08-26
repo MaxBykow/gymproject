@@ -124,7 +124,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# это коммит ветви секонд
+# это коммит ветви секонд, мержим в мастер ветвь
 ALLOWED_HOSTS = ['192.168.0.100', '127.0.0.1', '12345']
 
 MEDIA_ROOT = BASE_DIR / 'file_images'
